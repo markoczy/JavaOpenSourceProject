@@ -5,7 +5,7 @@
   Define section 
   ========================================================================== -->
   <!-- Package root -->
-  <groupId>mkz.example</groupId>
+  <groupId>ch.bfh.springerstifu</groupId>
   <!-- Application verbose name -->
   <name>Java Open Source Heroes Application</name>
   <!-- Output Jar Name -->
