@@ -5,7 +5,7 @@
     <display-name>Simple Servlet Application</display-name>
     <servlet>
         <servlet-name>HelloWorld</servlet-name>
-        <servlet-class>mkz.example.HelloWorld</servlet-class>
+        <servlet-class>ch.bfh.springerstifu.heroes.HelloWorld</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
 

@@ -1,4 +1,4 @@
-package mkz.example;
+package ch.bfh.springerstifu.heroes;
 
 import java.io.*;
 import javax.servlet.*;
@@ -30,8 +30,8 @@ public class HelloWorld extends HttpServlet {
             Connection conn = DriverManager.getConnection("jdbc:h2:~/test");
             Statement stat = conn.createStatement();
             stat.execute("create table test(id int primary key, name varchar(255))");
-            stat.execute("insert into test values(1, 'Hello')");
-            stat.execute("insert into test values(2, 'World')");
+            stat.execute("insert into test values(1, 'Springer')");
+            stat.execute("insert into test values(2, 'Stifu')");
             ResultSet rs;
             rs = stat.executeQuery("select * from test");
             while (rs.next()) {

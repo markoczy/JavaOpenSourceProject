@@ -7,9 +7,9 @@
   <!-- Package root -->
   <groupId>mkz.example</groupId>
   <!-- Application verbose name -->
-  <name>My useful Application</name>
+  <name>Java Open Source Heroes Application</name>
   <!-- Output Jar Name -->
-  <artifactId>HelloWorld</artifactId>
+  <artifactId>heroes</artifactId>
   <!-- <url>http://localhost:8080/myjar-0.1</url> -->
   <!-- Designated Version -->
   <version>0.1</version>
