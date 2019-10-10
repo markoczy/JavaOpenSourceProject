@@ -12,7 +12,6 @@
     <artifactId>camp</artifactId>
     <name>Heroes Camp Module</name>
 
-
     <!-- =======================================================================
     Builder
     ======================================================================== -->
@@ -42,6 +41,13 @@
             <artifactId>servlet-api</artifactId>
             <version>2.5</version>
             <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.2.0.RELEASE</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
     <!-- =================================================================== -->

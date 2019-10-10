@@ -4,13 +4,13 @@
 
     <display-name>Simple Servlet Application</display-name>
     <servlet>
-        <servlet-name>HelloWorld</servlet-name>
-        <servlet-class>ch.bfh.springerstifu.heroes.HelloWorld</servlet-class>
+        <servlet-name>HeroesMain</servlet-name>
+        <servlet-class>ch.bfh.springerstifu.heroes.Application</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>HelloWorld</servlet-name>
+        <servlet-name>HeroesMain</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 </web-app>
