@@ -1,4 +1,4 @@
-package ch.bfh.springerstifu.heroes.spring;
+package ch.bfh.springerstifu.heroes.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

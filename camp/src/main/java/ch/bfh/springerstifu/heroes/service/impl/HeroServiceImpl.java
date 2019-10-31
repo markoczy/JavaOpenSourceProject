@@ -2,9 +2,12 @@ package ch.bfh.springerstifu.heroes.service.impl;
 
 import java.util.Random;
 
+import org.springframework.stereotype.Service;
+
 import ch.bfh.springerstifu.heroes.model.Hero;
 import ch.bfh.springerstifu.heroes.service.HeroService;
 
+@Service
 public class HeroServiceImpl implements HeroService {
     private Random random = new Random(System.currentTimeMillis());
 

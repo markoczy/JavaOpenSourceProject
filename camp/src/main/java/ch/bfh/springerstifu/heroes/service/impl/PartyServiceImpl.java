@@ -2,13 +2,17 @@ package ch.bfh.springerstifu.heroes.service.impl;
 
 import java.util.Arrays;
 
+// import org.springframework.beans.factory.annotation.Inject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import ch.bfh.springerstifu.heroes.model.Party;
 import ch.bfh.springerstifu.heroes.service.HeroService;
 import ch.bfh.springerstifu.heroes.service.PartyService;
 
+@Service
 public class PartyServiceImpl implements PartyService {
+
     @Autowired
     private HeroService heroService;
 
