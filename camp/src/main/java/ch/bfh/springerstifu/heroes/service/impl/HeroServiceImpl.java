@@ -2,6 +2,8 @@ package ch.bfh.springerstifu.heroes.service.impl;
 
 import java.util.Random;
 
+import ch.bfh.springerstifu.heroes.repository.HeroRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ch.bfh.springerstifu.heroes.model.Hero;
@@ -11,6 +13,9 @@ import ch.bfh.springerstifu.heroes.service.HeroService;
 public class HeroServiceImpl implements HeroService {
     private Random random = new Random(System.currentTimeMillis());
 
+    @Autowired
+    private HeroRepository heroRepository;
+
     @Override
     public Hero createHero(String name) {
         Hero hero = new Hero();
@@ -18,7 +23,10 @@ public class HeroServiceImpl implements HeroService {
         hero.setHp(100);
         hero.setAtk(random.nextInt(100) + 1);
         hero.setDef(random.nextInt(100) + 1);
-        return hero;
+
+        //Persistence
+        String id = heroRepository.save(hero).getId();
+        return heroRepository.findById(id).get();
     }
 
 }

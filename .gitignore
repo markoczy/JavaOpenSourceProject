@@ -1,3 +1,9 @@
 .settings
 .project
 target/
+.classpath
+.springBeans
+.sts4-cache
+
+.idea
+.iml
