@@ -1,17 +1,23 @@
 package ch.bfh.springerstifu.camp.service.impl;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 // import org.springframework.beans.factory.annotation.Inject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ch.bfh.springerstifu.camp.model.Hero;
 import ch.bfh.springerstifu.camp.model.Party;
 import ch.bfh.springerstifu.camp.service.HeroService;
+import ch.bfh.springerstifu.camp.service.NameService;
 import ch.bfh.springerstifu.camp.service.PartyService;
 
 @Service
 public class PartyServiceImpl implements PartyService {
+
+    @Autowired
+    private NameService nameService;
 
     @Autowired
     private HeroService heroService;
@@ -21,15 +27,12 @@ public class PartyServiceImpl implements PartyService {
         Party party = new Party();
         party.setName(name);
 
-        party.setMembers(Arrays.asList(
-                //
-                heroService.createHero("Ark"),
-                //
-                heroService.createHero("Fyda"),
-                //
-                heroService.createHero("Royd"),
-                //
-                heroService.createHero("Elle")));
+        List<Hero> heroes = new ArrayList<Hero>();
+        for (int i = 0; i < 5; i++) {
+            String fullname = nameService.getForename() + " " + nameService.getLastname();
+            heroes.add(heroService.createHero(fullname));
+        }
+        party.setMembers(heroes);
 
         return party;
     }

@@ -13,8 +13,10 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import ch.bfh.springerstifu.camp.service.HeroService;
+import ch.bfh.springerstifu.camp.service.NameService;
 import ch.bfh.springerstifu.camp.service.PartyService;
 import ch.bfh.springerstifu.camp.service.impl.HeroServiceImpl;
+import ch.bfh.springerstifu.camp.service.impl.NameServiceImpl;
 import ch.bfh.springerstifu.camp.service.impl.PartyServiceImpl;
 
 import javax.persistence.EntityManagerFactory;
@@ -34,6 +36,12 @@ public class ServiceConfiguration {
     @Bean
     public PartyService partyService() {
         return new PartyServiceImpl();
+    }
+
+    @Primary
+    @Bean
+    public NameService nameService() {
+        return new NameServiceImpl();
     }
 
     @Bean

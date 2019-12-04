@@ -10,13 +10,19 @@ import ch.bfh.springerstifu.camp.model.Hero;
 
 @Component
 public class CampApplicationRunner implements ApplicationRunner {
+    // @Autowired
+    // private HeroRepository heroRepository;
 
     @Autowired
     private PartyService partyService;
 
+    // @Autowired
+    // private NameService nameService;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
         Party party = partyService.createParty("Party_Numbero_Uno");
+
         for (Hero hero : party.getMembers()) {
             System.out.println(hero);
         }
