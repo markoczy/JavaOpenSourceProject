@@ -1,6 +1,6 @@
-package ch.bfh.springerstifu.heroes.repository;
+package ch.bfh.springerstifu.camp.repository;
 
-import ch.bfh.springerstifu.heroes.model.Hero;
+import ch.bfh.springerstifu.camp.model.Hero;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

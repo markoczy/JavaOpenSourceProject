@@ -1,10 +1,10 @@
-package ch.bfh.springerstifu.heroes;
+package ch.bfh.springerstifu.camp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HeroesApplicationTests {
+class CampApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,8 +1,8 @@
-package ch.bfh.springerstifu.heroes.service;
+package ch.bfh.springerstifu.camp.service;
 
 import org.springframework.stereotype.Service;
 
-import ch.bfh.springerstifu.heroes.model.Party;
+import ch.bfh.springerstifu.camp.model.Party;
 
 @Service
 public interface PartyService {

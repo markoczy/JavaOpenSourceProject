@@ -1,4 +1,4 @@
-package ch.bfh.springerstifu.heroes.model;
+package ch.bfh.springerstifu.camp.model;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -19,20 +19,22 @@ public class Hero {
     private int hp;
     private Long atkQuery;
 
-    public String getId(){
+    public String getId() {
         return id;
     }
 
-    public void setId(String id){
-        this. id = id;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public Long getHeroATKGreaterThan(){
+    public Long getHeroATKGreaterThan() {
         return atkQuery;
     }
-    public void setHeroATKGreaterThan(Long atk){
+
+    public void setHeroATKGreaterThan(Long atk) {
         this.atkQuery = atk;
     }
+
     public String getName() {
         return name;
     }

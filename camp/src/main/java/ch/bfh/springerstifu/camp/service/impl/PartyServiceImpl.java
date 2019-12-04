@@ -1,4 +1,4 @@
-package ch.bfh.springerstifu.heroes.service.impl;
+package ch.bfh.springerstifu.camp.service.impl;
 
 import java.util.Arrays;
 
@@ -6,9 +6,9 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ch.bfh.springerstifu.heroes.model.Party;
-import ch.bfh.springerstifu.heroes.service.HeroService;
-import ch.bfh.springerstifu.heroes.service.PartyService;
+import ch.bfh.springerstifu.camp.model.Party;
+import ch.bfh.springerstifu.camp.service.HeroService;
+import ch.bfh.springerstifu.camp.service.PartyService;
 
 @Service
 public class PartyServiceImpl implements PartyService {

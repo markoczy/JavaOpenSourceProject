@@ -1,13 +1,13 @@
-package ch.bfh.springerstifu.heroes.service.impl;
+package ch.bfh.springerstifu.camp.service.impl;
 
 import java.util.Random;
 
-import ch.bfh.springerstifu.heroes.repository.HeroRepository;
+import ch.bfh.springerstifu.camp.repository.HeroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ch.bfh.springerstifu.heroes.model.Hero;
-import ch.bfh.springerstifu.heroes.service.HeroService;
+import ch.bfh.springerstifu.camp.model.Hero;
+import ch.bfh.springerstifu.camp.service.HeroService;
 
 @Service
 public class HeroServiceImpl implements HeroService {
@@ -24,7 +24,7 @@ public class HeroServiceImpl implements HeroService {
         hero.setAtk(random.nextInt(100) + 1);
         hero.setDef(random.nextInt(100) + 1);
 
-        //Persistence
+        // Persistence
         String id = heroRepository.save(hero).getId();
         return heroRepository.findById(id).get();
     }

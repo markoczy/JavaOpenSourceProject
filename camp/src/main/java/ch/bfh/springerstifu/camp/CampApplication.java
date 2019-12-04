@@ -1,13 +1,13 @@
-package ch.bfh.springerstifu.heroes;
+package ch.bfh.springerstifu.camp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HeroesApplication {
+public class CampApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HeroesApplication.class, args);
+		SpringApplication.run(CampApplication.class, args);
 	}
 
 }

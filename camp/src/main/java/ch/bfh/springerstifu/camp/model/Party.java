@@ -1,4 +1,4 @@
-package ch.bfh.springerstifu.heroes.model;
+package ch.bfh.springerstifu.camp.model;
 
 import java.util.List;
 
