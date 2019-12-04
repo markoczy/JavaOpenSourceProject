@@ -17,7 +17,6 @@ public class Hero {
     private int atk;
     private int def;
     private int hp;
-    private Long atkQuery;
 
     public String getId() {
         return id;
@@ -25,14 +24,6 @@ public class Hero {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public Long getHeroATKGreaterThan() {
-        return atkQuery;
-    }
-
-    public void setHeroATKGreaterThan(Long atk) {
-        this.atkQuery = atk;
     }
 
     public String getName() {
