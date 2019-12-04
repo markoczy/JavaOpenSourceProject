@@ -32,6 +32,11 @@ public class HeroController {
         return heroRepository.findById(id).get();
     }
 
+    @GetMapping("/atkgreater/{atk}")
+    public @ResponseBody Long getById(@PathVariable Integer atk) {
+        return heroRepository.countByAtkGreaterThan(atk);
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public void create(@RequestBody Hero hero) {

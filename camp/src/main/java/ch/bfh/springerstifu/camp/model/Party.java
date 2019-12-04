@@ -2,7 +2,15 @@ package ch.bfh.springerstifu.camp.model;
 
 import java.util.List;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.GenericGenerator;
+
 public class Party {
+    @Id
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
 
     private String name;
     private List<Hero> members;
