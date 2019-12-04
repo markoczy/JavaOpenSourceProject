@@ -29,8 +29,7 @@ public class PartyServiceImpl implements PartyService {
 
         List<Hero> heroes = new ArrayList<Hero>();
         for (int i = 0; i < 5; i++) {
-            String fullname = nameService.getForename() + " " + nameService.getLastname();
-            heroes.add(heroService.createHero(fullname));
+            heroes.add(heroService.createHero(nameService.getName()));
         }
         party.setMembers(heroes);
 

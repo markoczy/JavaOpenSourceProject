@@ -5,7 +5,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface NameService {
 
-    String getForename();
-
-    String getLastname();
+    String getName();
 }

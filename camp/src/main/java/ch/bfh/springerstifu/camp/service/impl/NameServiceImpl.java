@@ -17,13 +17,8 @@ public class NameServiceImpl implements NameService {
     static final Random RND = new Random(System.currentTimeMillis());
 
     @Override
-    public String getForename() {
-        return FORENAMES[RND.nextInt(FORENAMES.length)];
-    }
-
-    @Override
-    public String getLastname() {
-        return LASTNAMES[RND.nextInt(LASTNAMES.length)];
+    public String getName() {
+        return FORENAMES[RND.nextInt(FORENAMES.length)] + " " + LASTNAMES[RND.nextInt(LASTNAMES.length)];
     }
 
 }
