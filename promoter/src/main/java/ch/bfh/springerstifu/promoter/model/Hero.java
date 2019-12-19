@@ -1,16 +1,6 @@
-package ch.bfh.springerstifu.camp.model;
+package ch.bfh.springerstifu.promoter.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-import org.hibernate.annotations.GenericGenerator;
-
-@Entity
 public class Hero {
-	@Id
-	@GeneratedValue(generator = "system-uuid")
-	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 
 	private String id;
 	private String name;
@@ -54,12 +44,7 @@ public class Hero {
 		return hp;
 	}
 
-	public void setHp(int hp) {
+	public void setHp(double hp) {
 		this.hp = hp;
-	}
-
-	@Override
-	public String toString() {
-		return "{name: " + name + ", atk: " + atk + ", def: " + def + ", hp: " + hp + "}";
 	}
 }
