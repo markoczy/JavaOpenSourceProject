@@ -25,4 +25,21 @@ public class Party extends RepresentationModel {
 		this.members = members;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder("Party " + name);
+		for (Hero hero : members) {
+			if (hero.isAlive()) {
+				sb.append("<br />" + hero);
+			}
+		}
+		sb.append("<br />Dead Heroes!!!!!!!!!!!!!!");
+		for (Hero hero : members) {
+			if (!hero.isAlive()) {
+				sb.append("<br />" + hero);
+			}
+		}
+		return sb.toString();
+	}
+
 }

@@ -38,4 +38,13 @@ public class Hero {
 		this.hp = hp;
 	}
 
+	public boolean isAlive() {
+		return hp > 0;
+	}
+
+	@Override
+	public String toString() {
+		return "Hero [name=" + name + ", atk=" + atk + ", def=" + def + ", hp=" + hp + "]";
+	}
+
 }

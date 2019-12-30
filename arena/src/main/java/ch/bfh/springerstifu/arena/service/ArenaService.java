@@ -4,6 +4,6 @@ import ch.bfh.springerstifu.arena.model.Party;
 
 public interface ArenaService {
 
-	String battle(Party challangee, Party challanger);
+	Party battle(Party challangee, Party challanger);
 
 }

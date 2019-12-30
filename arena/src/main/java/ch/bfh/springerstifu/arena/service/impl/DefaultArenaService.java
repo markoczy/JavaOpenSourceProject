@@ -19,7 +19,7 @@ public class DefaultArenaService implements ArenaService {
 	private static final DecimalFormat f = new DecimalFormat("##.00");
 
 	@Override
-	public String battle(Party challengeeParty, Party challengerParty) {
+	public Party battle(Party challengeeParty, Party challengerParty) {
 
 		List<Hero> challengees = new ArrayList<>(challengeeParty.getMembers());
 		List<Hero> challengers = new ArrayList<>(challengerParty.getMembers());
@@ -65,12 +65,12 @@ public class DefaultArenaService implements ArenaService {
 			// name
 			if (challengees.isEmpty()) {
 				LOG.info("Party '" + challengerParty.getName() + "' wins this battle in " + roundCount + " rounds.");
-				return challengerParty.getName();
+				return challengerParty;
 			}
 
 			if (challengers.isEmpty()) {
 				LOG.info("Party '" + challengeeParty.getName() + "' wins this battle in " + roundCount + " rounds.");
-				return challengeeParty.getName();
+				return challengeeParty;
 			}
 		}
 	}

@@ -16,8 +16,8 @@ public class DefaultArenaClient implements ArenaClient {
 
 	@Override
 	public String battle(List<Party> challengers) {
-		ResponseEntity<String> response = new RestTemplate().exchange("http://localhost:3333/battle", HttpMethod.POST,
-				new HttpEntity<>(challengers), String.class);
+		ResponseEntity<String> response = new RestTemplate().exchange("http://localhost:3333/arena/battle",
+				HttpMethod.POST, new HttpEntity<>(challengers), String.class);
 		return response.getBody();
 	}
 

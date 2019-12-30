@@ -16,7 +16,7 @@ import ch.bfh.springerstifu.camp.model.Hero;
 import ch.bfh.springerstifu.camp.repository.HeroRepository;
 
 @RestController
-@RequestMapping("heroesold")
+@RequestMapping("heroes")
 public class HeroController {
 
 	@Autowired

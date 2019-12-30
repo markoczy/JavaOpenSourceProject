@@ -16,7 +16,7 @@ public class DefaultCampClient implements CampClient {
 	@Override
 	public EntityModel<Party> createParty(String name) {
 		ResponseEntity<EntityModel<Party>> response = new RestTemplate().exchange(
-				"http://localhost:8080/createParty?name={name}", HttpMethod.GET, null,
+				"http://localhost:8080/parties/createParty?name={name}", HttpMethod.GET, null,
 				new ParameterizedTypeReference<EntityModel<Party>>() {
 				}, name);
 		return response.getBody();
