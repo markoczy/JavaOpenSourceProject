@@ -18,7 +18,7 @@ public class PromoterController {
 	@GetMapping(value = "/promoteFight")
 	public @ResponseBody String promoteFight() {
 		String result = promoterService.promoteFight();
-		return "The Promoter is proud to proclaim the following result of today's battle: " + result;
+		return "<h2> For the Promoter it is a honor to pronounce the winner of todays battle: </h2>" + result;
 	}
 
 }

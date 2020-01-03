@@ -44,7 +44,7 @@ public class Hero {
 
 	@Override
 	public String toString() {
-		return "Hero [name=" + name + ", atk=" + atk + ", def=" + def + ", hp=" + hp + "]";
+		return "Hero name=" + name + ", atk=" + atk + ", def=" + def + ", hp=" + (hp < 0.0 ? hp = 0.0 : hp);
 	}
 
 }

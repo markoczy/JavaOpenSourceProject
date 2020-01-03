@@ -27,13 +27,13 @@ public class Party extends RepresentationModel {
 
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder("Party " + name);
+		StringBuilder sb = new StringBuilder("<h3>" + name + "</h3>");
 		for (Hero hero : members) {
 			if (hero.isAlive()) {
 				sb.append("<br />" + hero);
 			}
 		}
-		sb.append("<br />Dead Heroes!!!!!!!!!!!!!!");
+		sb.append("<br />Heroes of the winner party who has fought well but sadly has fallen:");
 		for (Hero hero : members) {
 			if (!hero.isAlive()) {
 				sb.append("<br />" + hero);

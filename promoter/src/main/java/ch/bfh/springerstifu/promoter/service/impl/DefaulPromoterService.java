@@ -2,6 +2,7 @@ package ch.bfh.springerstifu.promoter.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +18,21 @@ import ch.bfh.springerstifu.promoter.service.PromoterService;
 public class DefaulPromoterService implements PromoterService {
 
 	private static final Logger LOG = LoggerFactory.getLogger(DefaulPromoterService.class);
+	private Random random = new Random();
+	private static ArrayList<String> partyNames = new ArrayList<String>() {
+		{
+			add("FooFighters");
+			add("Blue Crusaders");
+			add("Ordinary Dust");
+			add("Rotten Headhunters");
+			add("Vendetta of the Angelic");
+			add("Yell from the Mountains");
+			add("Courage of the Serpent");
+			add("Goldenmantles");
+			add("Grayscars");
+		}
+
+	};
 
 	@Autowired
 	private CampClient campClient;
@@ -27,8 +43,10 @@ public class DefaulPromoterService implements PromoterService {
 	@Override
 	public String promoteFight() {
 
-		Party challengee = campClient.createParty("Challengee").getContent();
-		Party challenger = campClient.createParty("Challenger").getContent();
+		int random1 = random.nextInt(4);
+		int random2 = random.nextInt(5);
+		Party challengee = campClient.createParty(partyNames.subList(0, 4).get(random1)).getContent();
+		Party challenger = campClient.createParty(partyNames.subList(4, 9).get(random2)).getContent();
 		LOG.info("Todays battle is between Party '" + challengee.getName() + "' and Party '" + challenger.getName()
 				+ "'.");
 
