@@ -31,6 +31,7 @@
         <module>arena</module>
         <module>promoter</module>
         <module>registry</module>
+        <module>frontend</module>
     </modules>
     <!-- Set Spring Cloud Version -->
     <properties>
