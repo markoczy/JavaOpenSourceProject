@@ -20,6 +20,8 @@ public class DefaulPromoterService implements PromoterService {
 	private static final Logger LOG = LoggerFactory.getLogger(DefaulPromoterService.class);
 	private Random random = new Random();
 	private static ArrayList<String> partyNames = new ArrayList<String>() {
+		private static final long serialVersionUID = 1L;
+
 		{
 			add("FooFighters");
 			add("Blue Crusaders");
