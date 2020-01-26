@@ -28,6 +28,8 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
+
+
     <build>
         <plugins>
             <plugin>

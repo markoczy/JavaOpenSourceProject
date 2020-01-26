@@ -32,6 +32,23 @@
         <module>promoter</module>
         <module>registry</module>
     </modules>
+    <!-- Set Spring Cloud Version -->
+    <properties>
+        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+    </properties>
     <!-- =================================================================== -->
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 
 </project>
