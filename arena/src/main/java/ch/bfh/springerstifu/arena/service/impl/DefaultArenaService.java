@@ -2,6 +2,7 @@ package ch.bfh.springerstifu.arena.service.impl;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,7 +23,7 @@ public class DefaultArenaService implements ArenaService {
 	private List<String> history;
 
 	@Override
-	public Party battle(Party challengeeParty, Party challengerParty) {
+	public List<Party> battle(Party challengeeParty, Party challengerParty) {
 		// as there is often a histrix timeout, we try to improve the speed by
 		// reducing log calls (now 90% of the frontend calls are ok, I didn't
 		// find out how to increase timeout)
@@ -73,15 +74,18 @@ public class DefaultArenaService implements ArenaService {
 			if (challengees.isEmpty()) {
 				history.add("Party '" + challengerParty.getName() + "' wins this battle in " + roundCount + " rounds.");
 				LOG.info(history.stream().collect(Collectors.joining("\n")));
-				return challengerParty;
+				challengerParty.setWinner(true);
+				break;
 			}
 
 			if (challengers.isEmpty()) {
 				history.add("Party '" + challengeeParty.getName() + "' wins this battle in " + roundCount + " rounds.");
 				LOG.info(history.stream().collect(Collectors.joining("\n")));
-				return challengeeParty;
+				challengeeParty.setWinner(true);
+				break;
 			}
 		}
+		return Arrays.asList(challengeeParty, challengerParty);
 	}
 
 	private Hero duel(Hero challengee, Hero challenger) {
@@ -98,7 +102,7 @@ public class DefaultArenaService implements ArenaService {
 				+ " hp left.");
 
 		// battle until hp runs out
-		while (defender.getHp() >= 0) {
+		while (defender.getHp() > 0) {
 
 			// swap attacker and defender
 			Hero temp = attacker;

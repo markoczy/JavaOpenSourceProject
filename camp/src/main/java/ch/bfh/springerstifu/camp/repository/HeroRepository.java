@@ -1,10 +1,12 @@
 package ch.bfh.springerstifu.camp.repository;
 
-import ch.bfh.springerstifu.camp.model.Hero;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import ch.bfh.springerstifu.camp.model.Hero;
+
 @Repository
 public interface HeroRepository extends CrudRepository<Hero, String> {
-    Long countByAtkGreaterThan(Integer atk);
+	long countByAtkGreaterThan(Integer atk);
+
 }

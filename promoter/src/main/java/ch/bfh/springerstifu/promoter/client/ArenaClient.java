@@ -13,4 +13,5 @@ import ch.bfh.springerstifu.promoter.model.Party;
 public interface ArenaClient {
 	@PostMapping("/battle")
 	String battle(@RequestBody List<Party> challenger);
+	List<Party> battle(List<Party> challenger);
 }

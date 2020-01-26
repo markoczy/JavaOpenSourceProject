@@ -1,6 +1,7 @@
 package ch.bfh.springerstifu.promoter.service.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -42,7 +43,7 @@ public class DefaulPromoterService implements PromoterService {
 	private ArenaClient arenaClient;
 
 	@Override
-	public String promoteFight() {
+	public List<Party> promoteFight() {
 
 		int random1 = random.nextInt(4);
 		int random2 = random.nextInt(5);
@@ -51,12 +52,8 @@ public class DefaulPromoterService implements PromoterService {
 		LOG.info("Todays battle is between Party '" + challengee.getName() + "' and Party '" + challenger.getName()
 				+ "'.");
 
-		List<Party> challangers = new ArrayList<>();
-		challangers.add(challengee);
-		challangers.add(challenger);
-		String winner = arenaClient.battle(challangers);
-		LOG.info("And the winner is: Party '" + winner + "'");
+		List<Party> battleParties = arenaClient.battle(Arrays.asList(challengee, challenger));
 
-		return winner;
+		return battleParties;
 	}
 }

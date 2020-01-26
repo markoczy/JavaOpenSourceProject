@@ -17,16 +17,16 @@ public class ArenaController {
 	private ArenaService arenaService;
 
 	@PostMapping(value = "/battle")
-	public String battle(@RequestBody List<Party> challengers) {
+	public Party[] battle(@RequestBody List<Party> challengers) {
 		if (challengers.size() != 2) {
 			throw new RuntimeException("An error occured while battleing, challenger size is not 2");
 		}
 
 		Party challengee = challengers.get(0);
 		Party challenger = challengers.get(1);
-		Party winner = arenaService.battle(challengee, challenger);
-		return "<h2>After a bloody fight between " + challengee.getName() + " and " + challenger.getName()
-				+ " the winner is...(Trommelwirbel) \n</h2>" + winner;
+		List<Party> battleParties = arenaService.battle(challengee, challenger);
+
+		return (Party[]) battleParties.toArray();
 	}
 
 }

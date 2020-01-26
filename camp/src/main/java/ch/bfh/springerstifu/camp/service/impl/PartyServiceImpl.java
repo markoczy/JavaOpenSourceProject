@@ -15,9 +15,15 @@ import ch.bfh.springerstifu.camp.service.PartyService;
 @Service
 public class PartyServiceImpl implements PartyService {
 
+	private List<Party> parties = new ArrayList<>();
     @Autowired
     private HeroRepository heroRepository;
 
+	@Autowired
+	private NameService nameService;
+
+	@Autowired
+	private HeroService heroService;
     @Override
     public Party createParty(String name) {
         Party party = new Party();
@@ -33,7 +39,19 @@ public class PartyServiceImpl implements PartyService {
         }
         party.setMembers(members);
 
-        return party;
-    }
+		List<Hero> heroes = new ArrayList<Hero>();
+		for (int i = 0; i < 5; i++) {
+			heroes.add(heroService.createHero(nameService.getName()));
+		}
+		party.setMembers(heroes);
+		parties.add(party);
+
+		return party;
+	}
+
+	@Override
+	public List<Party> getParties() {
+		return Collections.unmodifiableList(parties);
+	}
 
 }

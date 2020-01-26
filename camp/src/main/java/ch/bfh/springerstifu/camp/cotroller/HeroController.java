@@ -33,7 +33,7 @@ public class HeroController {
 	}
 
 	@GetMapping("/atkgreater/{atk}")
-	public @ResponseBody Long getById(@PathVariable Integer atk) {
+	public @ResponseBody long getById(@PathVariable Integer atk) {
 		return heroRepository.countByAtkGreaterThan(atk);
 	}
 
