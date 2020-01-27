@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.hateoas.RepresentationModel;
 
-public class Party extends RepresentationModel {
+public class Party extends RepresentationModel<Party> {
 
 	private String name;
 	private List<Hero> members;

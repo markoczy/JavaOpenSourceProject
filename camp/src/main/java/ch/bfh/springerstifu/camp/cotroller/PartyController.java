@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.support.RepositoryEntityLinks;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -18,7 +17,6 @@ import ch.bfh.springerstifu.camp.model.Party;
 import ch.bfh.springerstifu.camp.service.PartyService;
 
 @RestController
-@RequestMapping("/parties")
 public class PartyController {
 	@Autowired
 	PartyService partyService;
