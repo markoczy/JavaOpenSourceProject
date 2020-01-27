@@ -5,14 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.bfh.springerstifu.arena.model.Party;
 import ch.bfh.springerstifu.arena.service.ArenaService;
 
 @RestController
-@RequestMapping("/arena")
 public class ArenaController {
 
 	@Autowired

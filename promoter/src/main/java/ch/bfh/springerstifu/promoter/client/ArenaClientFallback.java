@@ -10,6 +10,6 @@ import ch.bfh.springerstifu.promoter.model.Party;
 public class ArenaClientFallback implements ArenaClient {
     @Override
     public String battle(List<Party> challengers) {
-        throw new RuntimeException("Fallbacks are overrated, good ol' 500 is the stuff :-)");
+        return "Histrix timeout or Service in use";
     }
 }
