@@ -87,7 +87,7 @@ Das Projekt stellt die folgenden Services bereit:
 | Camp Service     | Ermöglicht es Helden (Endpunkt: `/heroes`) und Parties (Endpukt: `/parties`) zu verwalten.                                         | 2222 |
 | Promoter Service | Erstellt 2 Parties und lässt diese über den Arena Service mit einander kämpfen (Endpunkt: `/promoter/promoteFight`)                | 4444 |
 | Registry Service | Eureka Endpunkt zur Überwachung der Services (`/`)                                                                                 | 1111 |
-| Frontend Service | Stellt Funktionalitäten von anderen Services bereit, z.B. den Promoter Service über den Endpunkt `/promoter/promoter/promoteFight` | 8080 |
+| Frontend Service | Stellt Funktionalitäten von anderen Services bereit, z.B. den Promoter Service über den Endpunkt `/promoter`                       | 8080 |
 
 > Der Promoter Service verfügt zusätzlich über ein Histrix Dashboard, siehe `http://localhost:4444/hystrix` zur Überwachung sollte der Stream `http://localhost:4444/actuator/hystrix.stream` verwendet werden.
 
