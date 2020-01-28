@@ -71,4 +71,39 @@ Zusätzlich könnte man Vaadin besser ausbauen und Funktionen hinzufügen, die e
 
 ## Betriebsanleitung
 
+### Installation
 
+- Für die Gui Applikationen `Camp` und `Promoter` sollten die neusten Versionen von `nodejs` und `npm` auf dem Rechner installiert sein.
+- Die Applikation und alle Services können mit dem Command `mvn clean install` im Hauptordner erstellt werden.
+
+### Betrieb
+
+Das Projekt stellt die folgenden Services bereit:
+
+
+| Service          | Beschreibung                                                                                                                       | Port |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------|------|
+| Arena Service    | Lässt 2 Parties mit einander kämpfen (Endpunkt: `/battle`).                                                                        | 3333 |
+| Camp Service     | Ermöglicht es Helden (Endpunkt: `/heroes`) und Parties (Endpukt: `/parties`) zu verwalten.                                         | 2222 |
+| Promoter Service | Erstellt 2 Parties und lässt diese über den Arena Service mit einander kämpfen (Endpunkt: `/promoteFight`)                         | 4444 |
+| Registry Service | Eureka Endpunkt (`/`)                                                                                                              | 1111 |
+| Frontend Service | Stellt Funktionalitäten von anderen Services bereit, z.B. den Promoter Service über den Endpunkt `/promoter/promoter/promoteFight` | 8080 |
+
+> Der Promoter Service verfügt zusätzlich über ein Histrix Dashboard, siehe `http://localhost:4444/hystrix` zur Überwachung sollte der Stream `http://localhost:4444/actuator/hystrix.stream` verwendet werden.
+
+
+**Tipp:** Mit der Applikation [Conemu](https://conemu.github.io/) können alle Services gleichzeitig in aufgeteilten Konsoletabs ausgeführt werden, hierzu muss der folgende Task definiert werden:
+
+```cmd
+cmd /k ""%ConEmuBaseDir%\CmdInit.cmd" & cd .\registry\target & java -jar .\registry-1.0-SNAPSHOT.jar"
+
+cmd /k ""%ConEmuBaseDir%\CmdInit.cmd" & cd .\arena\target & java -jar .\arena-1.0-SNAPSHOT.jar" -new_console:s66H
+
+cmd /k ""%ConEmuBaseDir%\CmdInit.cmd" & cd .\camp\target & java -jar .\camp-1.0-SNAPSHOT.jar" -new_console:s50H
+
+cmd /k ""%ConEmuBaseDir%\CmdInit.cmd" & cd .\promoter\target & java -jar .\promoter-1.0-SNAPSHOT.jar" -new_console:s2T50V
+
+cmd /k ""%ConEmuBaseDir%\CmdInit.cmd" & cd .\frontend\target & java -jar .\frontend-1.0-SNAPSHOT.jar" -new_console:s3T50V
+```
+
+Durch Ausführung dieses Tasks im Hauptordner des Repositorys werden alle Applikationen gestartet.
