@@ -35,16 +35,11 @@ public class Hero {
 	}
 
 	public void setHp(double hp) {
-		this.hp = hp;
+		this.hp = hp > 0 ? hp : 0;
 	}
 
 	public boolean isAlive() {
 		return hp > 0;
-	}
-
-	@Override
-	public String toString() {
-		return "Hero name=" + name + ", atk=" + atk + ", def=" + def + ", hp=" + (hp < 0.0 ? hp = 0.0 : hp);
 	}
 
 }

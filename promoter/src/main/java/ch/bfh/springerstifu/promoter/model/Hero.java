@@ -47,4 +47,9 @@ public class Hero {
 	public void setHp(double hp) {
 		this.hp = hp;
 	}
+
+	public boolean isAlive() {
+		return hp > 0;
+	}
+
 }

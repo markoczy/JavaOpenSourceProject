@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import ch.bfh.springerstifu.promoter.model.Party;
 
-@FeignClient("camp-service")
+@FeignClient(value = "camp-service")
 public interface CampClient {
 
 	@GetMapping("/createParty")

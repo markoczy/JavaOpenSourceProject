@@ -15,25 +15,33 @@ import ch.bfh.springerstifu.camp.service.PartyService;
 @Service
 public class PartyServiceImpl implements PartyService {
 
-    @Autowired
-    private HeroRepository heroRepository;
+	private List<Party> parties = new ArrayList<>();
 
-    @Override
-    public Party createParty(String name) {
-        Party party = new Party();
-        party.setName(name);
+	@Autowired
+	private HeroRepository heroRepository;
 
-        List<Hero> heroes = new ArrayList<Hero>();
-        heroRepository.findAll().forEach(heroes::add);
-        Collections.shuffle(heroes);
+	@Override
+	public Party createParty(String name) {
+		Party party = new Party();
+		party.setName(name);
 
-        List<Hero> members = new ArrayList<Hero>();
-        for (int i = 0; i < 5; i++) {
-            members.add(heroes.remove(0));
-        }
-        party.setMembers(members);
+		List<Hero> heroes = new ArrayList<Hero>();
+		heroRepository.findAll().forEach(heroes::add);
+		Collections.shuffle(heroes);
 
-        return party;
-    }
+		List<Hero> members = new ArrayList<Hero>();
+		for (int i = 0; i < 5; i++) {
+			members.add(heroes.remove(0));
+		}
+		party.setMembers(members);
+		parties.add(party);
+
+		return party;
+	}
+
+	@Override
+	public List<Party> getParties() {
+		return Collections.unmodifiableList(parties);
+	}
 
 }

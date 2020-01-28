@@ -8,6 +8,7 @@ public class Party extends RepresentationModel<Party> {
 
 	private String name;
 	private List<Hero> members;
+	private boolean isWinner;
 
 	public String getName() {
 		return name;
@@ -25,21 +26,12 @@ public class Party extends RepresentationModel<Party> {
 		this.members = members;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder("<h3>" + name + "</h3>");
-		for (Hero hero : members) {
-			if (hero.isAlive()) {
-				sb.append("<br />" + hero);
-			}
-		}
-		sb.append("<br />Heroes of the winner party who has fought well but sadly has fallen:");
-		for (Hero hero : members) {
-			if (!hero.isAlive()) {
-				sb.append("<br />" + hero);
-			}
-		}
-		return sb.toString();
+	public boolean isWinner() {
+		return isWinner;
+	}
+
+	public void setWinner(boolean isWinner) {
+		this.isWinner = isWinner;
 	}
 
 }

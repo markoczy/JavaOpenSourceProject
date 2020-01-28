@@ -8,6 +8,7 @@ public class Party extends RepresentationModel<Party> {
 
 	private String name;
 	private List<Hero> members;
+	private boolean isWinner;
 
 	public String getName() {
 		return name;
@@ -25,4 +26,11 @@ public class Party extends RepresentationModel<Party> {
 		this.members = members;
 	}
 
+	public boolean isWinner() {
+		return isWinner;
+	}
+
+	public void setWinner(boolean isWinner) {
+		this.isWinner = isWinner;
+	}
 }
